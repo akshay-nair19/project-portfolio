@@ -107,6 +107,7 @@ export const skillsImage = (skill) => {
     case 'angular':
       return angular;
     case 'javascript':
+    case 'Javascript':
       return javascript;
     case 'next js':
       return nextJS;
@@ -254,7 +255,9 @@ export const skillsImage = (skill) => {
       return sqlalchemy;
     case 'fastapi':
       return fastapi;
+    case 'ubuntu':
+      return linux; // Using linux icon as fallback for Ubuntu
     default:
-      break;
+      return null; // Return null instead of undefined
   }
 }

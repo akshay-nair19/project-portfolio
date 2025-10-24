@@ -1,10 +1,23 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaCode, FaPlay } from 'react-icons/fa';
+import { useAnalytics } from '@/app/hooks/useAnalytics';
 import placeholder from '/public/png/placeholder.png';
 
 const SingleProject = ({ project }) => {
   const { name, description, tags, code, demo, image, features } = project;
+  const { trackProjectView, trackEvent } = useAnalytics();
+
+  const handleDemoClick = () => {
+    trackProjectView(name);
+    trackEvent('project_demo_click', 'engagement', name);
+  };
+
+  const handleCodeClick = () => {
+    trackProjectView(name);
+    trackEvent('project_code_click', 'engagement', name);
+  };
 
   return (
     <div className='group w-full h-fit flex flex-col items-center justify-center relative cursor-text overflow-hidden px-3 md:px-8 py-[1.4rem] bg-[linear-gradient(90deg,#281e57_0%,#201435_100%)] shadow-2xl rounded-lg border border-[#1a1443]'
@@ -52,6 +65,7 @@ const SingleProject = ({ project }) => {
           <Link
             href={demo}
             target='_blank'
+            onClick={handleDemoClick}
             className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 decoration-clone cursor-pointer no-underline delay-[0.3s]">
             <FaPlay />
           </Link>
@@ -59,6 +73,7 @@ const SingleProject = ({ project }) => {
           <Link
             href={code}
             target='_blank'
+            onClick={handleCodeClick}
             className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 cursor-pointer no-underline  delay-[0.3s] group-hover:translate-x-[-140px]">
             <FaCode />
           </Link>

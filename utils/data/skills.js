@@ -18,7 +18,16 @@ export const skillsData = [
   'Firebase',
   'MaterialUI',
   'Nginx',
-  'Strapi'
+  'Strapi',
+  'Python',
+  'C',
+  'Java',
+  'Microsoft Office',
+  'Ubuntu',
+  'Django',
+  'OpenCV',
+  'Pytorch',
+  'Selenium'
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.

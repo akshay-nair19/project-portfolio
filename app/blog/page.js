@@ -30,12 +30,17 @@ async function page() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
-        {
+        {blogs && blogs.length > 0 ? (
           blogs.map((blog, i) => (
-            blog?.cover_image &&
+            (blog?.cover_image || blog?.social_image) &&
             <BlogCard blog={blog} key={i} />
           ))
-        }
+        ) : (
+          <div className="col-span-full text-center py-8">
+            <p className="text-gray-400 text-lg">No blogs available at the moment.</p>
+            <p className="text-gray-500 text-sm mt-2">Check back later for new content!</p>
+          </div>
+        )}
       </div>
     </div>
   );

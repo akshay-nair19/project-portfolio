@@ -1,7 +1,22 @@
 {
   "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "es2015"],
     "paths": {
       "@/*": ["./*"]
-    }
-  }
+    },
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": false
+  },
+  "exclude": ["node_modules"]
 }
+
+// {
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": ["./*"]
+//     }
+//   }
+// }

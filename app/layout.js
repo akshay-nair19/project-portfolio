@@ -5,14 +5,15 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/helper/scroll-to-top";
 import Navbar from "./components/navbar";
+import GoogleAnalytics from "./components/analytics/google-analytics";
 import "./css/card.scss";
 import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Abu Said - Software Developer",
+  title: "Portfolio of Akshay Nair - Software Developer",
   description:
-    "This is the portfolio of Abu Said. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+    "This is the portfolio of Akshay Nair. I am a current student at the University of Massachusetts Amherst studying Computer Science, with a minor in Economics and focus in Cybersecuirty, Software Development and AI. I love to learn and take on new challenges! Please enjoy my website!",
 };
 
 export default function RootLayout({ children }) {
@@ -26,8 +27,15 @@ export default function RootLayout({ children }) {
           <ScrollToTop />
         </main>
         <Footer />
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      {/* Google Tag Manager */}
+      {process.env.NEXT_PUBLIC_GTM && (
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      )}
     </html>
   );
 }

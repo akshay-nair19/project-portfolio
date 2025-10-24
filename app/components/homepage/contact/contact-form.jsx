@@ -1,12 +1,14 @@
 "use client";
 // @flow strict
 import { isValidEmail } from "@/utils/check-email";
+import { useAnalytics } from "@/app/hooks/useAnalytics";
 import axios from "axios";
 import { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
 
 function ContactForm() {
+  const { trackContactForm } = useAnalytics();
   const [error, setError] = useState({ email: false, required: false });
   const [isLoading, setIsLoading] = useState(false);
   const [userInput, setUserInput] = useState({
@@ -40,6 +42,9 @@ function ContactForm() {
         userInput
       );
 
+      // Track successful contact form submission
+      trackContactForm('contact_form_success');
+      
       toast.success("Message sent successfully!");
       setUserInput({
         name: "",
@@ -47,6 +52,8 @@ function ContactForm() {
         message: "",
       });
     } catch (error) {
+      // Track failed contact form submission
+      trackContactForm('contact_form_error');
       toast.error(error?.response?.data?.message);
     } finally {
       setIsLoading(false);

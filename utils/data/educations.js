@@ -1,20 +1,20 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "Bachelors Degree",
+    duration: "2024 - 2028",
+    institution: "Univeristy of Massachusetts Amherst",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
-  },
-  {
-    id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
+    title: "High School",
+    duration: "2020-2024",
+    institution: "Adlai E. Stevenson High School",
   }
+  // {
+  //   id: 3,
+  //   title: "",
+  //   duration: "",
+  //   institution: "",
+  // }
 ]
