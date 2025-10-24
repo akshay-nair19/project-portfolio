@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic"
+import { useEffect, useState } from "react"
 
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false })
 
 const AnimationLottie = ({ animationPath, width }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
 
-  useEffect(() => setIsMounted(true), []);
+  useEffect(() => setIsMounted(true), [])
 
-  if (!isMounted) return null;
+  if (!isMounted) return null
 
   return (
     <Lottie
@@ -18,10 +18,11 @@ const AnimationLottie = ({ animationPath, width }) => {
       loop={true}
       style={{ width: width || "100%" }}
     />
-  );
-};
+  )
+}
 
-export default AnimationLottie;
+export default AnimationLottie
+
 
 
 // "use client"
