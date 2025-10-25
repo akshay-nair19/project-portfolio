@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_GA_ID = ""
+  NEXT_PUBLIC_GTM = ""
+
+[build.secrets]
+  omitKeys = ["NEXT_PUBLIC_GA_ID", "NEXT_PUBLIC_GTM"]
