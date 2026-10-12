@@ -1,5 +1,14 @@
 export const projectsData = [
     {
+        id: 4,
+        name: 'Chore Wars',
+        description: 'A mobile-first roommate chore tracker that turns shared household responsibilities into friendly competition. Housemates join through creator-approved invitations, track chores and deadlines, earn points, and compare scores on a leaderboard. Supports manual or workload-balanced assignments, completion history, bonus-point requests, and live updates. Next.js App Router, React, and TypeScript power the app, with Tailwind CSS, shadcn/ui, and Lucide for the interface. Supabase provides authentication, PostgreSQL, private avatar storage, and Realtime updates. Database functions finalize scoring and assignments, while row-level security protects household data. Sharp processes avatars; Vitest, Playwright, and SQL/pgTAP verify application logic, browser flows, and database behavior.',
+        tools: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Lucide', 'Supabase', 'PostgreSQL', 'Sharp', 'Vitest', 'Playwright', 'pgTAP'],
+        role: 'Full Stack Developer',
+        code: 'https://github.com/akshay-nair19/chore_wars',
+        demo: '',
+    },
+    {
         id: 1,
         name: 'UMass Lends',
         description: 'Developed a secure item-lending platform for UMass students using React, Next.js, and Supabase, enabling borrowing and lending of campus essentials through a modern web interface. Integrated Supabase authentication and row-level security to protect user data, enforce access controls, and ensure safe item transactions. Implemented WebSocket-based real-time private messaging between borrowers and lenders, providing instant communication within the platform. Leveraged OpenAI GPT-4o-mini to deliver AI-powered item recommendations that adapt to academic periods such as midterms and finals. Utilized Supabase PostgreSQL for relational data management and Supabase Storage for secure handling of item and profile images. Built a responsive frontend with React Router, Vite, and Tailwind CSS, ensuring fast performance and a clean, intuitive user experience. ',

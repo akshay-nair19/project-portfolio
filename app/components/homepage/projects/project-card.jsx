@@ -66,6 +66,20 @@ function ProjectCard({ project }) {
           </div>
           <div><span className="text-gray-400">{`};`}</span></div>
         </code>
+        {project.code && (
+          <div className="mt-6">
+            <a
+              href={project.code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-lg border border-[#16f2b3] px-4 py-2 text-sm font-medium text-[#16f2b3] transition-colors hover:bg-[#16f2b3] hover:text-[#0d1224] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#16f2b3]"
+              onClick={() => trackProjectView(project.name)}
+              aria-label={`View ${project.name} on GitHub`}
+            >
+              View on GitHub
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
